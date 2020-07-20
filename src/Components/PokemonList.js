@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import PokemonCard from "./PokemonCard";
 import Pagination from "./Pagination";
 import styled from "styled-components";
+
 
 const Container = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ const PokemonList = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [isLoading, setLoading] = useState(true);
 
+
   useEffect(() => {
     setLoading(true);
     let cancel;
@@ -31,7 +33,6 @@ const PokemonList = () => {
         cancelToken: new axios.CancelToken((c) => (cancel = c)),
       })
       .then((res) => {
-        console.log(res.data);
         setLoading(false);
         setPokemonList(res.data.results);
         setPrev(res.data.previous);
