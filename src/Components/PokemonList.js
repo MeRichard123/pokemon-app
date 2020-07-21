@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PokemonCard from "./PokemonCard";
 import Pagination from "./Pagination";
 import styled from "styled-components";
-
+import { capitalize } from "./SearchResult";
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +21,6 @@ const PokemonList = () => {
   const [next, setNext] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
   const [isLoading, setLoading] = useState(true);
-
 
   useEffect(() => {
     setLoading(true);
@@ -43,12 +42,6 @@ const PokemonList = () => {
       cancel();
     };
   }, [currentPage, pageNumber]);
-
-  function capitalize(string) {
-    if (typeof string == undefined) return;
-    var firstLetter = string[0] || string.charAt(0);
-    return firstLetter ? firstLetter.toUpperCase() + string.slice(1) : "";
-  }
 
   function NextPage() {
     setCurrentPage(next);

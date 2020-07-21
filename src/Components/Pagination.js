@@ -1,9 +1,14 @@
 import React from "react";
 import { ButtonGroup, Button } from "@material-ui/core";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  margin-bottom: 10px;
+`;
 
 const Pagination = ({ NextPage, PrevPage }) => {
   return (
-    <div>
+    <Wrapper>
       <ButtonGroup color="primary" aria-label="outlined primary button group">
         {PrevPage ? (
           <Button onClick={PrevPage}>Prev</Button>
@@ -20,7 +25,7 @@ const Pagination = ({ NextPage, PrevPage }) => {
           </Button>
         )}
       </ButtonGroup>
-    </div>
+    </Wrapper>
   );
 };
 

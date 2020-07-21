@@ -110,7 +110,39 @@
   color: #192a56;
 }
 .card {
-  margin: 15px;
   padding: 20px;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+.logo {
+  font-family: "Patua One", cursive;
+}
+.card-container {
+  position: relative;
+  cursor: pointer;
   width: 15rem;
+  height: 18rem;
+  margin: 50px;
+}
+.front {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  backface-visibility: hidden;
+  margin-right: auto;
+  background: white;
+}
+.back {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: white;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+.card:hover {
+  transform: rotateY(180deg);
 }

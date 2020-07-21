@@ -58,28 +58,28 @@ const useStyles = makeStyles((theme) => ({
 
 function Header() {
   const [searchValue, setSearchVal] = useState("");
-  const { active, setActive } = useContext(AppContext);
+  const { setActive, setSearchTerm } = useContext(AppContext);
   const classes = useStyles();
 
   function handleSubmit(e) {
     e.preventDefault();
-      if (searchValue) {
-          setActive(false);
-      } else {
-          setActive(true);
-      }
+    if (searchValue) {
+      setActive(false);
+    } else {
+      setActive(true);
+    }
+    setSearchTerm(searchValue);
   }
 
   function handleChange(e) {
     setSearchVal(e.target.value);
-    console.log(active);
   }
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.nav}>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" noWrap style={{ fontFamily: "Patua One" }}>
             MyDex
           </Typography>
           <div className={classes.search}>

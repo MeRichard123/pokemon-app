@@ -8,10 +8,11 @@ import SearchResult from "./Components/SearchResult";
 
 function App() {
   const [active, setActive] = useState(true);
-  const ProviderValue = useMemo(() => ({ active, setActive }), [
-    active,
-    setActive,
-  ]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const ProviderValue = useMemo(
+    () => ({ active, setActive, searchTerm, setSearchTerm }),
+    [active, setActive, searchTerm, setSearchTerm]
+  );
   return (
     <div className="App">
       <AppContext.Provider value={ProviderValue}>
