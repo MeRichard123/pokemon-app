@@ -72,4 +72,4 @@ const PokemonList = () => {
   );
 };
 
-export default PokemonList;
+export default React.memo(PokemonList);

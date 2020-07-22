@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .disabled {
   cursor: not-allowed !important;
@@ -109,22 +114,24 @@
   border-radius: 5px;
   color: #192a56;
 }
+
 .card {
   padding: 20px;
   width: 90%;
+
   height: 90%;
+
   position: absolute;
   transform-style: preserve-3d;
   transition: all 0.5s ease-in-out;
 }
-.logo {
-  font-family: "Patua One", cursive;
-}
+
 .card-container {
   position: relative;
   cursor: pointer;
   width: 15rem;
   height: 18rem;
+  padding: 0;
   margin: 50px;
 }
 .front {

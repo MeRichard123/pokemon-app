@@ -35,12 +35,12 @@ const PokemonCard = ({ name, url }) => {
         const TypesArray = res.data.types;
         TypesArray.map((type) => {
           typesList.push(type.type.name);
-          return null;
         });
         setTypes(typesList);
       })
       .catch((err) => {
         setError(true);
+        console.log(err);
       });
   });
 

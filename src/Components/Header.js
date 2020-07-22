@@ -14,6 +14,13 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     alignItems: "center",
     background: "tomato",
+    paddingBottom: theme.spacing(1),
+  },
+  title: {
+    fontFamily: "Patua One",
+    [theme.breakpoints.down("sm")]: {
+      margin: "auto",
+    },
   },
   search: {
     position: "relative",
@@ -79,7 +86,7 @@ function Header() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.nav}>
-          <Typography variant="h6" noWrap style={{ fontFamily: "Patua One" }}>
+          <Typography variant="h6" noWrap className={classes.title}>
             MyDex
           </Typography>
           <div className={classes.search}>
