@@ -16,3 +16,5 @@ The Live version can be seen [here](https://merichard123.github.io/pokemon-app/)
 If you would like to have a peek around to see how this whole project works,
 just clone the repo into your directory.
 Run `npm i` to download the dependencies and `npm start` to start the server.
+
+If you would like a shortcut run `npm i && npm start`
