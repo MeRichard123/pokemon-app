@@ -4,6 +4,7 @@ import PokemonCard from "./PokemonCard";
 import Pagination from "./Pagination";
 import styled from "styled-components";
 import { capitalize } from "./SearchResult";
+import Loading from "../Screens/Loading";
 
 const Container = styled.div`
   display: flex;
@@ -53,7 +54,7 @@ const PokemonList = () => {
   }
 
   if (isLoading) {
-    return "Loading";
+    return <Loading />;
   }
 
   return (

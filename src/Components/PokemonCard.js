@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import NotFound from "../Screens/NotFound";
 
 const Card = styled.div`
   margin: 15px;
@@ -35,6 +36,7 @@ const PokemonCard = ({ name, url }) => {
         const TypesArray = res.data.types;
         TypesArray.map((type) => {
           typesList.push(type.type.name);
+          return type;
         });
         setTypes(typesList);
       })
@@ -42,12 +44,12 @@ const PokemonCard = ({ name, url }) => {
         setError(true);
         console.log(err);
       });
-  });
+  }, [url]);
 
   return (
     <>
       {hasError ? (
-        "Pokemon Not Found"
+        <NotFound />
       ) : (
         <div className="card-container">
           <Card className="card">
@@ -77,9 +79,14 @@ const PokemonCard = ({ name, url }) => {
                 {stats.map((stat, index) => (
                   <p
                     key={index}
-                    style={{ fontSize: "13px", marginRight: "5px" }}
+                    style={{
+                      fontSize: "13px",
+                      marginRight: "5px",
+                      lineHeight: "30px",
+                    }}
                   >
-                    {stat.stat.name}:{stat.base_stat}
+                    {stat.stat.name}: {stat.base_stat}{" "}
+                    <span style={{ fontSize: "20px" }}>|</span>
                   </p>
                 ))}
               </Container>
@@ -91,4 +98,4 @@ const PokemonCard = ({ name, url }) => {
   );
 };
 
-export default PokemonCard;
+export default React.memo(PokemonCard);

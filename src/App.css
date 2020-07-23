@@ -116,37 +116,41 @@
 }
 
 .card {
-  padding: 20px;
+  padding: 30px;
   width: 90%;
-
+  margin: 10px;
   height: 90%;
-
   position: absolute;
   transform-style: preserve-3d;
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .card-container {
   position: relative;
   cursor: pointer;
-  width: 15rem;
+  width: 18rem;
   height: 18rem;
   padding: 0;
   margin: 50px;
 }
 .front {
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 90%;
   height: 90%;
   backface-visibility: hidden;
-  margin-right: auto;
-  background: white;
+  margin: auto;
 }
 .back {
   position: absolute;
   width: 90%;
   height: 90%;
-  background: white;
+  right: 5%;
+  bottom: 5%;
+  transform: translate(-5%, -5%);
+
   backface-visibility: hidden;
   transform: rotateY(180deg);
 }
